@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+
+        let firstNum = 0;
+        let operator = "";
+        let secondNum = 0;
+
+        //Create math functions
+        //add
+        function add(a,b){
+            return a + b;
+        }
+        //subtract
+        function sub(a, b){
+            return a - b;
+        }
+        //multiply
+        function mult(a, b){
+            return a * b;
+        }
+        //divide
+        //can't divide 0 by 0
+        function divide(a, b){
+            if(a === 0 && b === 0){
+                alert("Cannot divide 0 by 0");
+            }
+            return (a / b);
+        }
+
+        //Test math functions
+        console.log(add(10,10));
+        console.log(sub(169, 100));
+        console.log(mult(5,5));
+        console.log(divide(25, 5));
+        // console.log(divide(0, 0));
+
+        //Operate function accepts an operator, and two numbers
+        //Switch statement for conditionals
+        function operate(operator, numOne, numTwo){
+            switch (operator) {
+                case "+":
+                    return numOne + numTwo;
+                    break;
+
+                case "-":
+                    return numOne - numTwo;
+                    break;
+
+                case "*":
+                    return numOne * numTwo;
+                    break;
+
+                case "/":
+                    return (numOne / numTwo);
+                    break;
+            
+                default: 
+                    return "Invalid operator"
+                    break;
+            }
+        }
+
+
+
+        
+        
+        
+        
+        
+
+    </script>
+
+</body>
+</html>
