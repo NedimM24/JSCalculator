@@ -1,7 +1,10 @@
+
+
 #container{
     display: flex;
     flex-wrap: wrap;
-    width: 220px;
+    width: 500px;
+    height: 640px;
     margin: auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -12,15 +15,15 @@
 }
 
 .display{
-    width: 80%;
-    height: 50px;
+    width: 95.5%;
+    height: 100px;
     background-color: white;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    border-radius: 0px;
+    margin-bottom: 10px;
 }
 
 button{
-    width: 50px;
-    height: 40px;
+    width: 120px;
+    height: 135px;
     
 }
