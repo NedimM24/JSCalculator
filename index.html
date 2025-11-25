@@ -31,7 +31,7 @@
 
     <script>
 
-        let currentNum = "";
+        let firstnum = "";
         let operator = "";
         let secondNum = "";
         let displayNum = "";
@@ -47,68 +47,117 @@
             const num = document.createTextNode(1)
             screen.appendChild(num)
             displayNum += "1";
+            if(operator.length === 0){
+                firstnum += "1"
+            } else {
+                secondNum += "1"
+            }
             
-            console.log(displayNum);
 
         });
 
         document.querySelector('.two').addEventListener('click', function() {
-            const num = document.createTextNode(2)
-            screen.appendChild(num)
+            screen.textContent += "2"
             displayNum += "2";
+            if(operator.length === 0){
+                firstnum += "2"
+            } else {
+                secondNum += "2"
+            }
+            
         });
 
         document.querySelector('.three').addEventListener('click', function() {
             const num = document.createTextNode(3)
             screen.appendChild(num)
             displayNum += "3";
+            if(operator.length === 0){
+                firstnum += "3"
+            } else {
+                secondNum += "3"
+            }
         });
 
         document.querySelector('.four').addEventListener('click', function() {
             const num = document.createTextNode(4)
             screen.appendChild(num)
             displayNum += "4";
+            if(operator.length === 0){
+                firstnum += "4"
+            } else {
+                secondNum += "4"
+            }
         });
 
         document.querySelector('.five').addEventListener('click', function() {
             const num = document.createTextNode(5)
             screen.appendChild(num)
             displayNum += "5";
+            if(operator.length === 0){
+                firstnum += "5"
+            } else {
+                secondNum += "5"
+            }
         });
 
         document.querySelector('.six').addEventListener('click', function() {
             const num = document.createTextNode(6)
             screen.appendChild(num)
             displayNum += "6";
+            if(operator.length === 0){
+                firstnum += "6"
+            } else {
+                secondNum += "6"
+            }
         });
 
         document.querySelector('.seven').addEventListener('click', function() {
             const num = document.createTextNode(7)
             screen.appendChild(num)
             displayNum += "7";
+            if(operator.length === 0){
+                firstnum += "7"
+            } else {
+                secondNum += "7"
+            }
         });
 
         document.querySelector('.eight').addEventListener('click', function() {
             const num = document.createTextNode(8)
             screen.appendChild(num)
             displayNum += "8";
+            if(operator.length === 0){
+                firstnum += "8"
+            } else {
+                secondNum += "8"
+            }
         });
 
         document.querySelector('.nine').addEventListener('click', function() {
             const num = document.createTextNode(9)
             screen.appendChild(num)
             displayNum += "9";
+            if(operator.length === 0){
+                firstnum += "9"
+            } else {
+                secondNum += "9"
+            }
         });
 
         document.querySelector('.zedd').addEventListener('click', function() {
             const num = document.createTextNode(0)
             screen.appendChild(num)
             displayNum += "0";
+            if(operator.length === 0){
+                firstnum += "0"
+            } else {
+                secondNum += "0"
+            }
         });
 
         document.querySelector('.clear').addEventListener('click', function() {
             screen.textContent = "";
-            currentNum = "";
+            firstnum = "";
             operator = "";
             secondNum = "";
             displayNum = "";
@@ -147,6 +196,17 @@
             
         });
 
+         document.querySelector('.equals').addEventListener('click', function() {
+            screen.textContent = "";
+            displayNum = operate(operator, parseFloat(firstnum), parseFloat(secondNum))
+            if(displayNum!== undefined){
+                screen.textContent += displayNum
+                firstnum =displayNum;
+                secondNum = "";
+                operator = "";
+            }
+        });
+
     
 
         //Operate function accepts an operator, and two numbers
@@ -178,9 +238,7 @@
                     break;
             }
         }
-
-
-        console.log(operate("/", 0, 0));
+    
         
        
         
