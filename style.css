@@ -7,7 +7,7 @@
     height: 640px;
     margin: auto;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     background-color: grey;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@
 
 .display{
     display: flex;
-    width: 95.5%;
+    width: 440px;
     height: 100px;
     background-color: white;
     border-radius: 0px;
@@ -27,7 +27,11 @@
 }
 
 button{
-    width: 120px;
-    height: 135px;
-    
+    width: 110px;
+    height: 115px;
+}
+
+.backspace{
+    height: 80px;
+    width: 440px;
 }
