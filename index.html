@@ -11,58 +11,143 @@
     <!-- Create HTML calculator with buttons-->
      <div id="container">
         <div class="display"></div>
-        <button class="number">1</button>   
-        <button class="number">2</button> 
-        <button class="number">3</button> 
+        <button class="one">1</button>   
+        <button class="two">2</button> 
+        <button class="three">3</button> 
         <button class="plus">+</button>
-        <button class="number">4</button> 
-        <button class="number">5</button> 
-        <button class="number">6</button> 
-        <button class="minus">-</button>
-        <button class="number">7</button> 
-        <button class="number">8</button> 
-        <button class="number">9</button>
-        <button class="Multipy">X</button>
+        <button class="four">4</button> 
+        <button class="five">5</button> 
+        <button class="six">6</button> 
+        <button class="minus">_</button>
+        <button class="seven">7</button> 
+        <button class="eight">8</button> 
+        <button class="nine">9</button>
+        <button class="multiply">X</button>
         <button class="clear">C</button>
-        <button class="clear">0</button>
+        <button class="zedd">0</button>
         <button class="equals">=</button>  
         <button class="divide">/</button> 
     </div>
 
     <script>
 
-        let firstNum = 0;
+        let currentNum = "";
         let operator = "";
-        let secondNum = 0;
+        let secondNum = "";
+        let displayNum = "";
 
-        //Create math functions
-        //add
-        function add(a,b){
-            return a + b;
-        }
-        //subtract
-        function sub(a, b){
-            return a - b;
-        }
-        //multiply
-        function mult(a, b){
-            return a * b;
-        }
-        //divide
-        //can't divide 0 by 0
-        function divide(a, b){
-            if(a === 0 && b === 0){
-                alert("Cannot divide 0 by 0");
-            }
-            return (a / b);
-        }
+        let screen = document.querySelector(".display");
 
-        //Test math functions
-        console.log(add(10,10));
-        console.log(sub(169, 100));
-        console.log(mult(5,5));
-        console.log(divide(25, 5));
-        // console.log(divide(0, 0));
+        //query selectors and event listeners for buttons
+        //brainstorm when buttone are clicked add them to firstnum, once operand is clicked firstnum is done
+        //click second nums once equals is clicked add the two nums and spit out the result on display 
+        //Get firstt number function , get second number function, calculate function
+
+        document.querySelector('.one').addEventListener('click', function() {
+            const num = document.createTextNode(1)
+            screen.appendChild(num)
+            displayNum += "1";
+            
+            console.log(displayNum);
+
+        });
+
+        document.querySelector('.two').addEventListener('click', function() {
+            const num = document.createTextNode(2)
+            screen.appendChild(num)
+            displayNum += "2";
+        });
+
+        document.querySelector('.three').addEventListener('click', function() {
+            const num = document.createTextNode(3)
+            screen.appendChild(num)
+            displayNum += "3";
+        });
+
+        document.querySelector('.four').addEventListener('click', function() {
+            const num = document.createTextNode(4)
+            screen.appendChild(num)
+            displayNum += "4";
+        });
+
+        document.querySelector('.five').addEventListener('click', function() {
+            const num = document.createTextNode(5)
+            screen.appendChild(num)
+            displayNum += "5";
+        });
+
+        document.querySelector('.six').addEventListener('click', function() {
+            const num = document.createTextNode(6)
+            screen.appendChild(num)
+            displayNum += "6";
+        });
+
+        document.querySelector('.seven').addEventListener('click', function() {
+            const num = document.createTextNode(7)
+            screen.appendChild(num)
+            displayNum += "7";
+        });
+
+        document.querySelector('.eight').addEventListener('click', function() {
+            const num = document.createTextNode(8)
+            screen.appendChild(num)
+            displayNum += "8";
+        });
+
+        document.querySelector('.nine').addEventListener('click', function() {
+            const num = document.createTextNode(9)
+            screen.appendChild(num)
+            displayNum += "9";
+        });
+
+        document.querySelector('.zedd').addEventListener('click', function() {
+            const num = document.createTextNode(0)
+            screen.appendChild(num)
+            displayNum += "0";
+        });
+
+        document.querySelector('.clear').addEventListener('click', function() {
+            screen.textContent = "";
+            currentNum = "";
+            operator = "";
+            secondNum = "";
+            displayNum = "";
+            
+        });
+
+        document.querySelector('.plus').addEventListener('click', function() {
+            const operatorSign = document.createTextNode("+")
+            screen.appendChild(operatorSign)
+            operator = "+"
+            console.log(operator)
+            
+        });
+
+        document.querySelector('.minus').addEventListener('click', function() {
+            const operatorSign = document.createTextNode("-")
+            screen.appendChild(operatorSign)
+            operator = "-"
+            console.log(operator)
+            
+        });
+
+        document.querySelector('.multiply').addEventListener('click', function() {
+            const operatorSign = document.createTextNode("*")
+            screen.appendChild(operatorSign)
+            operator = "*"
+            console.log(operator)
+            
+        });
+
+        document.querySelector('.divide').addEventListener('click', function() {
+            const operatorSign = document.createTextNode("/")
+            screen.appendChild(operatorSign)
+            operator = "/"
+            console.log(operator)
+            
+        });
+
+    
 
         //Operate function accepts an operator, and two numbers
         //Switch statement for conditionals
@@ -81,7 +166,11 @@
                     break;
 
                 case "/":
+                    if(numOne === 0 && numTwo ===0){
+                        alert("Cannot divide by 0")
+                    } else {
                     return (numOne / numTwo);
+                    }
                     break;
             
                 default: 
@@ -90,12 +179,12 @@
             }
         }
 
-        //test operate functions
-        console.log("Start operate function testing");
-        console.log(operate("+", 5, 5));
-        console.log(operate("-", 5, 5));
-        console.log(operate("*", 5, 5));
-        console.log(operate("/", 5, 5));
+
+        console.log(operate("/", 0, 0));
+        
+       
+        
+
         
         
 
