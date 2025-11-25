@@ -15,11 +15,15 @@
 }
 
 .display{
+    display: flex;
     width: 95.5%;
     height: 100px;
     background-color: white;
     border-radius: 0px;
     margin-bottom: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 60px;
 }
 
 button{
