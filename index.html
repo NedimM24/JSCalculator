@@ -111,6 +111,11 @@
             }
         });
 
+        document.querySelector('.backspace').addEventListener('click', function() {
+            screen.textContent = screen.textContent.slice(0, -1);
+            
+        });
+
     
 
         //Operate function accepts an operator, and two numbers
